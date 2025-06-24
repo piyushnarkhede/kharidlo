@@ -1,0 +1,74 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { height: 100%; font-family: Arial, sans-serif; }
+
+.hero {
+  background: url('https://source.unsplash.com/1600x900/?shopping') center/cover no-repeat;
+  height: 100%;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.5);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+h1 { font-size: 4rem; margin-bottom: 20px; }
+
+.search-container {
+  display: flex;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 50px;
+  overflow: hidden;
+  background: white;
+}
+
+.search-container input {
+  flex: 1;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.search-container button {
+  border: none;
+  background: #ff6f61;
+  color: white;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-container button:hover {
+  background: #e65b50;
+}
+
+#results {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
