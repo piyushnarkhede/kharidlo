@@ -1,32 +1,22 @@
-function searchProduct() {
-  const input = document.getElementById("productInput").value.trim();
-  if (!input) return;
+function compare() {
+  const q = document.getElementById('query').value.trim();
+  const results = document.getElementById('results');
+  results.innerHTML = '';
+  if (!q) return;
 
-  document.getElementById("productName").innerText = input;
-  document.getElementById("results").classList.remove("hidden");
-
-  // Dummy product data — replace with live API data or scraping
-  const dummyResults = [
-    { site: "Amazon", price: 5999, url: "https://amazon.in" },
-    { site: "Flipkart", price: 6200, url: "https://flipkart.com" },
-    { site: "Meesho", price: 6100, url: "https://meesho.com" }
+  // Fake data - replace with real fetch/scrape later
+  const data = [
+    { site: 'Amazon', price: Math.floor(Math.random()*10000)/100, url: '#' },
+    { site: 'Flipkart', price: Math.floor(Math.random()*10000)/100, url: '#' }
   ];
 
-  // Find best price
-  const bestPrice = Math.min(...dummyResults.map(r => r.price));
-
-  const table = document.getElementById("resultsTable");
-  table.innerHTML = ""; // Clear previous results
-
-  dummyResults.forEach(result => {
-    const row = document.createElement("tr");
-    if (result.price === bestPrice) row.classList.add("best");
-
-    row.innerHTML = `
-      <td>${result.site}</td>
-      <td>₹${result.price}</td>
-      <td><a href="${result.url}" target="_blank">Buy</a></td>
-    `;
-    table.appendChild(row);
+  data.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.innerHTML = `
+      <h2>${item.site}</h2>
+      <p>Price: ₹${item.price.toFixed(2)}</p>
+      <p><a href="${item.url}" target="_blank">Buy now</a></p>`;
+    results.appendChild(div);
   });
 }
