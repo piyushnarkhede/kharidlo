@@ -1,42 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kharidlo - Price Comparison</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kharidlo Price Comparator</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>🛒 Kharidlo</h1>
-    <p>Compare product prices from Amazon, Flipkart, Meesho & more</p>
-  </header>
-
+  <header><h1>Kharidlo</h1></header>
   <main>
-    <input type="text" id="productInput" placeholder="Search product..." />
-    <button onclick="searchProduct()">Compare</button>
-
-    <div id="results" class="hidden">
-      <h2>Results for: <span id="productName"></span></h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Website</th>
-            <th>Price</th>
-            <th>Buy Now</th>
-          </tr>
-        </thead>
-        <tbody id="resultsTable">
-          <!-- Results will be injected here -->
-        </tbody>
-      </table>
+    <div class="search-box">
+      <input type="text" id="query" placeholder="Search for product...">
+      <button onclick="compare()">Compare Prices</button>
     </div>
+    <div id="results" class="results"></div>
   </main>
-
-  <footer>
-    <p>&copy; 2025 Kharidlo.in | Built to save your money 💸</p>
-  </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
